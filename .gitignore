@@ -12,7 +12,7 @@
 /build
 
 #hide api
-/src/firebase.js
+/src/firebase
 
 # misc
 .DS_Store

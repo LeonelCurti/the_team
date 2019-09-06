@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { firebaseMatches } from "../../../firebase";
+import { firebaseMatches } from "../../../firebase/firebase";
 import {firebaseLooper,reverseArray} from '../../ui/misc';
 
 
