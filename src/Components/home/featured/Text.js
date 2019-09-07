@@ -57,7 +57,7 @@ export class Text extends Component {
               transform: `translate(${x}px,${y}px)`
             }}
           >
-            League
+            Super
           </div>
         );
       }}
@@ -87,7 +87,7 @@ export class Text extends Component {
               transform: `translate(${x}px,${y}px)`
             }}
           >
-            Championships
+            Liga
           </div>
         );
       }}

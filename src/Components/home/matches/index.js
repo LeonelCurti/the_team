@@ -10,7 +10,7 @@ const MatchesHome = () => {
           bck='#0e1731' 
           size='50px' 
           color='#ffffff'>
-          Matches
+          Partidos
         </Tag>
         <Blocks>
           
@@ -21,7 +21,7 @@ const MatchesHome = () => {
           color='#0e1731'
           link={true}
           linkto='/the_team'>
-          See more matches          
+          Ver más partidos          
         </Tag>
       </div>
     </div>
