@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 export const Tag = props => {
   const template = (
     <div
@@ -25,21 +24,39 @@ export const Tag = props => {
   }
 };
 
-export const firebaseLooper = (snapshot) => {
+export const firebaseLooper = snapshot => {
   const data = [];
-  snapshot.forEach((childSnapshot)=>{
+  snapshot.forEach(childSnapshot => {
     data.push({
       ...childSnapshot.val(),
       id: childSnapshot.key
-    })
-  })
+    });
+  });
   return data;
-}
+};
 
-export const reverseArray = (actualArr) => {
+export const reverseArray = actualArr => {
   let reversedArr = [];
-  for (let i = actualArr.length-1; i>=0 ; i--) {
-    reversedArr.push(actualArr[i]);    
+  for (let i = actualArr.length - 1; i >= 0; i--) {
+    reversedArr.push(actualArr[i]);
   }
   return reversedArr;
-}
+};
+
+export const validate = element => {
+  let error = [true, ""];
+
+  if (element.validation.email){
+    const valid = /\S+@\S+\.\S+/.test(element.value);
+    const msg = `${!valid ? 'Must be a valid email':''}`
+    error = !valid ? [valid, msg] : error;
+  }
+
+
+  if (element.validation.required) {
+    const valid = element.value.trim() !== "";
+    const msg = `${!valid ? "This field is required" : ""}`;
+    error = !valid ? [valid, msg] : error;
+  }
+  return error;
+};
