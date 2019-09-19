@@ -19,7 +19,8 @@ export class Blocks extends Component {
         this.setState({
           matches: reverseArray(matches)
         });
-      });
+      })
+      .catch(err=>console.log(err));
   }
 
   showMatches = matches => (

@@ -62,6 +62,8 @@ export class SignIn extends Component {
     for (let key in this.state.formData) {
       dataToSubmit[key] = this.state.formData[key].value;
       formIsValid = this.state.formData[key].valid && formIsValid;
+      
+      
     }
     if (formIsValid) {
       firebase
@@ -71,6 +73,7 @@ export class SignIn extends Component {
           this.props.history.push('/dashboard')          
         })
         .catch(error => {
+          console.log(error);          
           this.setState({
             formError: true
           });

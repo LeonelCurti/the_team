@@ -75,16 +75,19 @@ export class Enroll extends Component {
       formIsValid = this.state.formData[key].valid && formIsValid;
     }
     if (formIsValid) {
-      firebasePromotions.orderByChild('email').equalTo(dataToSubmit.email).once('value')
+      firebasePromotions
+      .orderByChild('email')
+      .equalTo(dataToSubmit.email)
+      .once('value')
       .then((snapshot)=>{
         if (snapshot.val() === null) {
-          firebasePromotions.push(dataToSubmit)
+          firebasePromotions.push(dataToSubmit);
           this.resetFormSuccess(true);          
         } else {
           this.resetFormSuccess(false);          
-        }
-        
+        }        
       })
+      .catch(err=>console.log(err));
     } else {
       this.setState({
         formError: true
