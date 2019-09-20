@@ -68,7 +68,7 @@ export class index extends Component {
                       </TableCell>
                       <TableCell>
                         {
-                          match.final==='yes'
+                          match.final==='Yes'
                           ?<span className='matches_tag_red'>Final</span>
                           :<span className='matches_tag_green'>Not played yet</span>
                         }
